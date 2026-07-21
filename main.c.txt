@@ -3,6 +3,9 @@
 int main()
 {
     int choice;
+    char name[20];
+    int id;
+    int age;
 
     printf("===== 学生信息管理系统 =====\n");
     printf("1. 添加学生信息\n");
@@ -17,6 +20,13 @@ int main()
     {
         case 1:
             printf("添加学生信息\n");
+            printf("请输入学生学号: ");
+            scanf("%d", &id);
+            printf("请输入学生姓名: ");
+            scanf("%s",name);
+            printf("请输入学生年龄: ");
+            scanf("%d" ,&age);
+            printf("学生信息添加成功！ \n");
             break;
 
         case 2:
