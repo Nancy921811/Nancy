@@ -1,21 +1,39 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-
-// 学生信息结构体
-typedef struct Student
+int main()
 {
-    int id;
-    char name[20];
-    float score;
+    int choice;
 
-    struct Student *next;
+    printf("===== 学生信息管理系统 =====\n");
+    printf("1. 添加学生信息\n");
+    printf("2. 浏览学生信息\n");
+    printf("3. 查询学生信息\n");
+    printf("0. 退出系统\n");
 
-}Student;
+    printf("请输入选择：");
+    scanf("%d",&choice);
 
+    switch(choice)
+    {
+        case 1:
+            printf("添加学生信息\n");
+            break;
 
-// 创建新节点
-int main(）{
-return 0；
+        case 2:
+            printf("浏览学生信息\n");
+            break;
+
+        case 3:
+            printf("查询学生信息\n");
+            break;
+
+        case 0:
+            printf("退出系统\n");
+            break;
+
+        default:
+            printf("输入错误\n");
+    }
+
+    return 0;
 }
