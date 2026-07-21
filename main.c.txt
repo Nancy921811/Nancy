@@ -31,6 +31,9 @@ int main()
 
         case 2:
             printf("浏览学生信息\n");
+            printf("学号: %d\n", id);
+            printf("姓名: %s\n", name);
+            printf("年龄: %d\n", age);
             break;
 
         case 3:
