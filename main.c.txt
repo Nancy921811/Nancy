@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+// 学生信息结构体
+typedef struct Student
+{
+    int id;
+    char name[20];
+    float score;
+
+    struct Student *next;
+
+}Student;
+
+
+// 创建新节点
+int main(）{
+return 0；
+}
