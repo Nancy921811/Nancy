@@ -38,6 +38,17 @@ int main()
 
         case 3:
             printf("查询学生信息\n");
+            int searchId;
+            printf("请输入要查询的学生学号: ");
+            scanf("%d", &searchId);
+            if(searchId == id) {
+            printf("查询成功！ \n");
+            printf("学号: %d\n", id);
+            printf("姓名: %s\n", name);
+            printf("年龄: %d\n", age);
+} else {
+            printf("没有找到该学生信息！ \n");
+}
             break;
 
         case 0:
