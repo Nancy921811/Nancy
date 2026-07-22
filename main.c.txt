@@ -33,6 +33,42 @@ void menu()
     printf("0.退出系统\n");
     printf("====================\n");
 }
+//浏览所有学生信息
+void showStudent()
+{
+    Student *p = head;
+
+
+    //判断链表是否为空
+    if(p == NULL)
+    {
+        printf("暂无学生信息！\n");
+        return;
+    }
+
+
+    printf("======学生信息列表======\n");
+
+
+    //遍历链表
+    while(p != NULL)
+    {
+
+        printf("学号：%d\n",p->id);
+
+        printf("姓名：%s\n",p->name);
+
+        printf("年龄：%d\n",p->age);
+
+
+        printf("----------------\n");
+
+
+        //移动到下一个节点
+        p = p->next;
+    }
+
+}
 
 
 int main()
@@ -58,7 +94,7 @@ int main()
 
 
             case 2:
-                printf("浏览学生信息\n");
+                showStudent();
                 break;
 
 
