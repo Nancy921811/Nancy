@@ -1,63 +1,94 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+//学生结构体
+typedef struct Student
+{
+    int id;             //学号
+    char name[20];      //姓名
+    int age;            //年龄
+
+    struct Student *next;   //指向下一个学生
+
+}Student;
+
+
+//创建头节点
+Student *head = NULL;
+
+
+//显示菜单
+void menu()
+{
+    printf("====================\n");
+    printf(" 学生信息管理系统\n");
+    printf("====================\n");
+    printf("1.添加学生信息\n");
+    printf("2.浏览学生信息\n");
+    printf("3.查询学生信息\n");
+    printf("4.删除学生信息\n");
+    printf("5.修改学生信息\n");
+    printf("0.退出系统\n");
+    printf("====================\n");
+}
+
 
 int main()
 {
     int choice;
-    char name[20];
-    int id;
-    int age;
 
-    printf("===== 学生信息管理系统 =====\n");
-    printf("1. 添加学生信息\n");
-    printf("2. 浏览学生信息\n");
-    printf("3. 查询学生信息\n");
-    printf("0. 退出系统\n");
 
-    printf("请输入选择：");
-    scanf("%d",&choice);
-
-    switch(choice)
+    while(1)
     {
-        case 1:
-            printf("添加学生信息\n");
-            printf("请输入学生学号: ");
-            scanf("%d", &id);
-            printf("请输入学生姓名: ");
-            scanf("%s",name);
-            printf("请输入学生年龄: ");
-            scanf("%d" ,&age);
-            printf("学生信息添加成功！ \n");
-            break;
 
-        case 2:
-            printf("浏览学生信息\n");
-            printf("学号: %d\n", id);
-            printf("姓名: %s\n", name);
-            printf("年龄: %d\n", age);
-            break;
+        menu();
 
-        case 3:
-            printf("查询学生信息\n");
-            int searchId;
-            printf("请输入要查询的学生学号: ");
-            scanf("%d", &searchId);
-            if(searchId == id) {
-            printf("查询成功！ \n");
-            printf("学号: %d\n", id);
-            printf("姓名: %s\n", name);
-            printf("年龄: %d\n", age);
-} else {
-            printf("没有找到该学生信息！ \n");
-}
-            break;
+        printf("请输入选择:");
+        scanf("%d",&choice);
 
-        case 0:
-            printf("退出系统\n");
-            break;
 
-        default:
-            printf("输入错误\n");
+        switch(choice)
+        {
+
+            case 1:
+                printf("添加学生信息\n");
+                break;
+
+
+            case 2:
+                printf("浏览学生信息\n");
+                break;
+
+
+            case 3:
+                printf("查询学生信息\n");
+                break;
+
+
+            case 4:
+                printf("删除学生信息\n");
+                break;
+
+
+            case 5:
+                printf("修改学生信息\n");
+                break;
+
+
+            case 0:
+                printf("退出系统\n");
+                return 0;
+
+
+            default:
+                printf("输入错误\n");
+
+        }
+
     }
+
 
     return 0;
 }
