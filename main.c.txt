@@ -121,6 +121,41 @@ void addStudent()
     printf("学生信息添加成功！\n");
 
 }
+//查询学生信息
+void searchStudent()
+{
+    int id;
+
+    printf("请输入要查询的学生学号：");
+    scanf("%d",&id);
+
+
+    Student *p = head;
+
+
+    while(p != NULL)
+    {
+        if(p->id == id)
+        {
+            printf("查询成功！\n");
+            printf("----------------\n");
+            printf("学号：%d\n",p->id);
+            printf("姓名：%s\n",p->name);
+            printf("年龄：%d\n",p->age);
+            printf("----------------\n");
+
+            return;
+        }
+
+
+        //移动到下一个节点
+        p = p->next;
+    }
+
+
+    printf("没有找到该学生信息！\n");
+
+}
 
 
 int main()
@@ -151,7 +186,7 @@ int main()
 
 
             case 3:
-                printf("查询学生信息\n");
+                searchStudent( );
                 break;
 
 
