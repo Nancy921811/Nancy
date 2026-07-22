@@ -69,6 +69,58 @@ void showStudent()
     }
 
 }
+//添加学生信息
+void addStudent()
+{
+    //创建新节点
+    Student *newStudent;
+
+    newStudent = (Student*)malloc(sizeof(Student));
+
+
+    //输入学生信息
+    printf("请输入学生学号：");
+    scanf("%d",&newStudent->id);
+
+
+    printf("请输入学生姓名：");
+    scanf("%s",newStudent->name);
+
+
+    printf("请输入学生年龄：");
+    scanf("%d",&newStudent->age);
+
+
+
+    //新节点指向空
+    newStudent->next = NULL;
+
+
+
+    //如果链表为空
+    if(head == NULL)
+    {
+        head = newStudent;
+    }
+    else
+    {
+        //找到链表尾部
+        Student *p = head;
+
+        while(p->next != NULL)
+        {
+            p = p->next;
+        }
+
+
+        //尾部连接新节点
+        p->next = newStudent;
+    }
+
+
+    printf("学生信息添加成功！\n");
+
+}
 
 
 int main()
@@ -89,7 +141,7 @@ int main()
         {
 
             case 1:
-                printf("添加学生信息\n");
+                addStudent( );
                 break;
 
 
